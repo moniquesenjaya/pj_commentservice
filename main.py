@@ -7,7 +7,7 @@ from fastapi.openapi.utils import get_openapi
 from fastapi.middleware.cors import CORSMiddleware
 from adapter.router.comment import comment_router as comment
 
-load_dotenv()
+# load_dotenv()
 COMMENT_BASE_PATH = os.getenv("BASE_PATH")
 VERSION_1 = os.getenv("VERSION_1")
 FE_URL = os.getenv("FE_URL")
