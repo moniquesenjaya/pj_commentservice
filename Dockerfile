@@ -11,16 +11,17 @@ COPY . /pj-commentservice/src
 
 WORKDIR /pj-commentservice/src
 
-ARG MONGO_URI="mongodb://host.docker.internal:27017/"
-ARG MONGO_DB_NAME="CommentService"
-ARG BASE_PATH="/service/comment"
-ARG VERSION_1="/v1"
-ARG FE_URL="http://localhost:3000"
+# ARG MONGO_URI="mongodb://host.docker.internal:27017/"
+# ARG MONGO_DB_NAME="CommentService"
+# ARG BASE_PATH="/service/comment"
+# ARG VERSION_1="/v1"
+# ARG FE_URL="http://localhost:3000"
 
-ENV MONGO_URI=${MONGO_URI}
-ENV MONGO_DB_NAME=${MONGO_DB_NAME}
-ENV BASE_PATH=${BASE_PATH}
-ENV VERSION_1=${VERSION_1}
-ENV FE_URL=${FE_URL}
+# ENV MONGO_URI=${MONGO_URI}
+# ENV MONGO_DB_NAME=${MONGO_DB_NAME}
+# ENV BASE_PATH=${BASE_PATH}
+# ENV VERSION_1=${VERSION_1}
+# ENV FE_URL=${FE_URL}
 
+EXPOSE 8002
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8002", "--proxy-headers"]
